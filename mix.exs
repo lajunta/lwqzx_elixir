@@ -42,6 +42,7 @@ defmodule Lwqzx.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
+      {:ex_doc, ">= 0.0.0", only: :dev},
       {:httpoison, "~> 0.12.0"},
       {:iconv, "~> 1.0.5"},
       {:floki, "~> 0.17.2"},
@@ -52,7 +53,7 @@ defmodule Lwqzx.Mixfile do
   defp package do 
     [
       name: :lwqzx,
-      files: ["lib","priv","mix.exs","README.*","readme*","LICENSE*","license*"],
+      files: ["lib","mix.exs","README.*","LICENSE*"],
       maintainers: ["zxy"],
       licenses: ["Appache 2.0"],
       links: %{"Github" => "https://github.com/lajunta/lwqzx_elixir"}

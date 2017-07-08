@@ -4,21 +4,16 @@ defmodule Lwqzx do
   """
 
   @doc """
-  Hello world.
-
-  ## Examples
-
-      iex> Lwqzx.hello
-      :world
-
+  Make utf-8 string convert to gb2312.
   """
-  def hello do
-    :world
-  end
 
   def cn(str) do
     :iconv.convert("gb2312","utf-8",str)
   end
+
+  @doc """
+  Make a header containing previous cookie.
+  """
 
   def myhead(h) do
     cookie = h 
@@ -28,7 +23,17 @@ defmodule Lwqzx do
     [{"Cookie",cookie}]
   end
 
-  def auth(login \\ "zxy",passwd \\"at37f0de") do
+  @doc """
+  Lwqzx Auth.
+
+  ## Examples
+
+      iex> Lwqzx.auth("hello","helllopassword")
+      [login: "hello", uname: "hello realname",groups: ["..",]]
+
+  """
+
+  def auth(login,passwd) do
     lurl = "http://www.lwqzx.sdedu.net/kernel/net_school/active_app/login1.php"
     bod = {:form,[{"login_user_m_",login},{"login_password",passwd}]}
     HTTPoison.start

@@ -1,6 +1,6 @@
 # Lwqzx
 
-**TODO: Some Actions For Lwqzxn**
+**TODO: Some Actions For Lwqzx**
 
 ## Installation
 
@@ -16,3 +16,12 @@ end
 Documentation can be generated with [ExDoc](https://github.com/elixir-lang/ex_doc)
 and published on [HexDocs](https://hexdocs.pm). Once published, the docs can
 be found at [https://hexdocs.pm/lwqzx](https://hexdocs.pm/lwqzx).
+
+## Usage
+
+Just do it in your program
+
+Lwqzx.auth(login,passwd)
+
+if authed, it will return [login: login, uname: realname,groups: [..]]
+if not authed, it just return []
